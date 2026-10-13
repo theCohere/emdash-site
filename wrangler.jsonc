@@ -22,4 +22,14 @@
 	"triggers": {
 		"crons": ["* * * * *"],
 	},
+    // 添加 send_email 绑定
+  	"send_email": [
+   	 	{
+      		"name": "EMAIL",
+      		"allowed_destination_addresses": [] 
+    	}
+  	],
+    "vars": {
+   		 "EMAIL_FROM": "noreply@thecohere.org"
+    }
 }
