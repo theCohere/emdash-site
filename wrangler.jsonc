@@ -22,14 +22,14 @@
 	"triggers": {
 		"crons": ["* * * * *"],
 	},
-    // 添加 send_email 绑定
+    // 绑定原生邮件服务
   	"send_email": [
-   	 	{
-      		"name": "EMAIL",
-      		"allowed_destination_addresses": [] 
-    	}
+  	  {
+  	    "name": "EMAIL"
+  	  }
   	],
-    "vars": {
-   		 "EMAIL_FROM": "noreply@thecohere.org"
-    }
+  
+  	"vars": {
+  	  "EMAIL_FROM": "noreply@thecohere.org"
+  	}
 }

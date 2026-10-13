@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import { d1, r2 } from "@emdash-cms/cloudflare";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
-import { emdashSmtp } from "emdash-smtp";
+import { cloudflareEmail } from "@emdash-cms/cloudflare/plugins";
 
 export default defineConfig({
 	output: "server",
@@ -17,7 +17,12 @@ export default defineConfig({
 		emdash({
 			database: d1({ binding: "DB", session: "auto" }),
 			storage: r2({ binding: "MEDIA" }),
-			plugins: [emdashSmtp()],
+			plugins: [
+        		cloudflareEmail({
+      				from: { email: "hello@thecohere.org", name: "Cohere CMS" },
+     				 replyTo: "hello@thecohere.org",
+    				}),
+     		 ],
 		}),
 	],
 	fonts: [
