@@ -19,8 +19,8 @@ export default defineConfig({
 			storage: r2({ binding: "MEDIA" }),
 			plugins: [
         		cloudflareEmail({
-      				from: { email: "hello@thecohere.org", name: "Cohere CMS" },
-     				 replyTo: "hello@thecohere.org",
+      				from: { email: "hello@email.retailinsights.us", name: "Cohere CMS" },
+     				 replyTo: "hello@email.retailinsights.us",
     				}),
      		 ],
 		}),
