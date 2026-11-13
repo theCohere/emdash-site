@@ -15,14 +15,14 @@ export default defineConfig({
 	integrations: [
 		react(),
 		emdash({
-			database: d1({ binding: "DB", session: "auto" }),
+			database: d1({ binding: "DB", session: "auto", coalesce: true }),
 			storage: r2({ binding: "MEDIA" }),
 			plugins: [
-        		cloudflareEmail({
-      				from: { email: "hello@email.retailinsights.us", name: "Cohere CMS" },
-     				 replyTo: "hello@email.retailinsights.us",
-    				}),
-     		 ],
+				cloudflareEmail({
+					from: { email: "hello@email.retailinsights.us", name: "Cohere CMS" },
+					replyTo: "hello@email.retailinsights.us",
+				}),
+			],
 		}),
 	],
 	fonts: [
